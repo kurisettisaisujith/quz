@@ -1,0 +1,78 @@
+import React, { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import Confetti from 'react-confetti';  // Confetti library
+import "../styles.css";
+import cheerSound from "../assets/cheer.mp3"; // Celebration sound
+import retrySound from "../assets/retry.mp3"; // Retry encouragement sound
+import fireworksGif from "../assets/fireworks.gif"; // Fireworks animation
+import shareIcon from "../assets/share.png"; // Social media share icon
+
+const Results = () => {
+  const { score, total, name } = useLocation().state;
+  const navigate = useNavigate();
+  const [showCelebration, setShowCelebration] = useState(false);
+  const [animatedScore, setAnimatedScore] = useState(0);
+
+  useEffect(() => {
+    if (score / total >= 0.1) {
+      setShowCelebration(true);
+    }
+    if (score / total >= 0.7) {
+      new Audio(cheerSound).play(); // Play cheer sound for high scores
+    } else {
+      new Audio(retrySound).play(); // Play retry encouragement sound
+    }
+
+    let counter = 0;
+    const interval = setInterval(() => {
+      if (counter < score) {
+        setAnimatedScore(counter + 1);
+        counter++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 100);
+    return () => clearInterval(interval);
+  }, [score, total]);
+
+  const retakeQuiz = () => {
+    navigate('/');
+  };
+
+  const shareResults = () => {
+    const text = `I scored ${score} out of ${total} on the quiz! Can you beat my score?`; 
+    const url = window.location.href;
+    navigator.clipboard.writeText(`${text} ${url}`);
+    alert("Results copied! Share with your friends!");
+  };
+
+  const getMessage = () => {
+    const percentage = (score / total) * 100;
+    if (percentage === 100) return "🎉 Perfect Score! You're a Genius! 🏆";
+    if (percentage >= 80) return "🔥 Amazing Job! You're a Pro!";
+    if (percentage >= 50) return "👍 Good Effort! Keep Improving!";
+    return "💡 Keep Practicing! You'll Get There!";
+  };
+
+  return (
+    <div className="results">
+      {showCelebration && <Confetti />} {/* Confetti animation */}
+      {showCelebration && <img src={fireworksGif} alt="Fireworks" className="fireworks" />} {/* Fireworks animation */}
+      <div className="glass-card">
+        <h1>🏆 Quiz Results 🏆</h1>
+        <p>{name}, you scored <strong>{animatedScore} out of {total}</strong>!</p>
+        <div className="summary">
+          <p>✅ Correct Answers: {animatedScore}</p>
+          <p>❌ Incorrect Answers: {total - animatedScore}</p>
+        </div>
+        <p className="result-message">{getMessage()}</p>
+        <button className="retake-button" onClick={retakeQuiz}>🔄 Try Again</button>
+        <button className="share-button" onClick={shareResults}>
+          <img src={shareIcon} alt="Share" className="share-icon" /> Share Results
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default Results;

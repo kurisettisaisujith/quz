@@ -1,0 +1,607 @@
+
+/* Score and Streak Styles */
+.score {
+  font-size: 1.2em;
+  color: #4CAF50;
+  margin: 10px 0;
+}
+
+.streak {
+  font-size: 1.2em;
+  color: #FF5722;
+  margin: 10px 0;
+}
+
+/* Confetti Animation */
+.confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Option Button Styles */
+.answer-btn {
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.answer-btn.selected {
+  background-color: #4CAF50;
+  color: white;
+  border-color: #45a049;
+}
+
+.answer-btn:disabled {
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+/* Next Button Styles */
+.next-button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.next-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.next-button:hover:not(:disabled) {
+  background-color: #45a049;
+}
+
+/* Boost Effect */
+.boost-effect {
+  font-size: 1.2em;
+  color: #FFD700; /* Gold color */
+  margin: 10px 0;
+}
+/* Car Animation 
+.car {
+  position: absolute;
+  bottom: 50px;
+  left: -100px;
+  width: 80px;
+  height: 40px;
+  /*background: url('../assets/car.png') no-repeat center/contain;
+  animation: drive 2s linear forwards;
+}
+
+@keyframes drive {
+  0% {
+    left: -100px;
+  }
+  100% {
+    left: 100vw;
+  }
+}
+*/
+/* Quiz Container */
+
+
+/* Timer Styling */
+.timer {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #f90d0d;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Options Buttons */
+.option-button {
+  display: block;
+  width: 80%;
+  padding: 10px;
+  margin: 10px auto;
+  border: 2px solid #ff9800;
+  background: white;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.option-button:hover {
+  background: #ffcc80;
+  transform: scale(1.05);
+}
+
+.option-button.selected {
+  background: #ff9800;
+  color: white;
+}
+
+/* Next Button */
+.next-button {
+  background: #ff5722;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.next-button:hover {
+  background: #e64a19;
+  transform: scale(1.1);
+}
+
+
+
+/* General Styling */
+
+
+/* Container Styling */
+
+
+/* Title and Subtitle */
+.quiz-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ff9800;
+  text-shadow: 2px 2px #ffd700;
+}
+
+.typing-animation {
+  font-size: 1.2rem;
+  font-style: italic;
+
+  white-space: nowrap;
+  overflow: hidden;
+ 
+  animation: typing 3s steps(40, end) ;
+}
+
+/* Input Field */
+.name-input {
+  width: 80%;
+  padding: 10px;
+
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.name-input:focus {
+  border: 2px solid #ff9800;
+  box-shadow: 0 0 10px rgba(240, 236, 235, 0.5);
+}
+
+/* Buttons */
+.animated-button {
+  padding: 12px 20px;
+  margin: 10px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+
+
+.leaderboard-button {
+  background-color: #2196f3;
+  color: white;
+}
+
+.animated-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Fun Fact */
+.fun-fact {
+  margin-top: 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.fade-in {
+  animation: fadeIn 2s ease-in;
+}
+
+/* Animations */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes startEffect {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Apply the animation when the button is clicked */
+.animate {
+  animation: startEffect 1s ease-in-out;
+}
+
+
+body { font-family: cursive;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+background-color: #000;
+background-image: url('./images/paper.jpg');
+background-size: cover;
+background-position: center;
+
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.quiz-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.quiz-title {
+  font-family: cursive;
+  font-size: 24px;
+  color: #ffcc00;
+  text-shadow: 2px 2px 4px #000;
+}
+
+.quiz-subtitle {
+  font-family:  cursive;
+  font-size: 14px;
+  font-weight: bold;
+  color: #f8f6f6;
+}
+
+.name-input {
+  font-family:cursive;
+  font-size: 14px;
+  padding: 10px;
+  width: 250px;
+  text-align: center;
+  border: 2px solid #ffcc00;
+  background: black;
+  color: white;
+  border-radius: 5px;
+}
+
+.start-button {
+  font-family:  cursive;
+  font-size: 16px;
+  background: #ff5733;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.start-button:hover {
+  background: #ff3d00;
+}
+.home {
+ /* Change this based on theme */
+
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*quiz*/
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); /* Retro font */
+
+.quiz {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glass-card {
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for content */
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  color: #fff;
+  
+}
+
+.timer {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.warning {
+  color: red;
+}
+
+.answer-btn {
+  font-family:  cursive;
+  font-size: 16px;
+  background-color: #ff5733;
+  color: white;
+  padding: 12px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.answer-btn.selected {
+  background-color: #00cc00;
+}
+
+.answer-btn:hover {
+  transform: scale(1.05);
+}
+
+.next-button {
+  font-family:  cursive;
+  font-size: 18px;
+  background: #ff5733;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.next-button:hover {
+  background: #ff3d00;
+}
+
+.boost-effect {
+  font-family:fantasy cursive;
+  font-size: 20px;
+  color: yellow;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.streak-count {
+  font-family:  cursive;
+  font-size: 18px;
+  color: #ffcc00;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+
+/*results*/
+
+.results {
+  
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glass-card {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  color: #fff;
+  border: 2px solid gold;
+}
+
+.result-message {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 15px 0;
+  color: gold;
+}
+
+.retake-button {
+  font-family:  cursive;
+  font-size: 16px;
+  background-color: #ff5733;
+  color: white;
+  padding: 15px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.retake-button:hover {
+  transform: scale(1.1);
+  background-color: #ff3d00;
+}
+
+/* 🎇 Fireworks Animation */
+.fireworks {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+
+  background-size: cover;
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+
+.home, .quiz, .results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+input{
+  border: none;
+  background-color: azure;
+}
+.glass-card {
+  background: rgba(255, 255, 255, 0.1); /* Glassmorphism effect */
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+}
+
+.name-input {
+  padding: 10px;
+  font-size: 16px;
+  /* Neon green border */
+  border-radius: 5px;
+  margin: 20px 0;
+  background: rgba(255, 255, 255, 0.8);
+  color: #1a1a1a; /* Dark text for contrast */
+}
+
+.start-button, .retake-button {
+  padding: 15px 30px;
+  font-size: 18px;
+  background-color: #00ff88; /* Neon green */
+  color: #1a1a1a; /* Dark text */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.start-button:hover, .retake-button:hover {
+  background-color: #00cc66; /* Darker green on hover */
+}
+
+.quiz {
+  padding: 20px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.2); /* Light background */
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.progress-bar div {
+  height: 100%;
+  background-color: #00b8ff; /* Neon blue */
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+.answers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.answers button {
+  padding: 15px;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+  border: 2px solid #00b8ff; /* Neon blue border */
+  border-radius: 5px;
+  color: rgb(22, 1, 1);
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.answers button:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Brighter on hover */
+  border-color: #00ff88; /* Neon green border on hover */
+}
+
+.answers button.selected {
+  background-color: #00ff88; /* Neon green for selected answer */
+  color: #1a1a1a; /* Dark text for contrast */
+}
+
+.boost {
+  margin-top: 20px;
+}
+
+.boost button {
+  margin: 5px;
+  padding: 10px 20px;
+  background-color: #ff0044; /* Neon red */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.boost button:hover {
+  background-color: #cc0036; /* Darker red on hover */
+}
+
+.summary {
+  margin: 20px 0;
+}
+
+.summary p {
+  font-size: 18px;
+  margin: 10px 0;
+}

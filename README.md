@@ -126,10 +126,12 @@ Users can choose from multiple avatars to personalize their quiz experience. Ava
 ## 🌐 Live Website  
 Visit the app at: [quizsujith.netlify.app](https://quizsujith.netlify.app)
 
+---
+
 ## 👨‍💻 Author
 - **Sujith Kurisetti**
 - GitHub: [Your GitHub Profile](https://github.com/kurisettisaisujith)
 
 --- 
 
-Hope this works for you! Let me know if you'd like any more tweaks.
+

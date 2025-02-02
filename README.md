@@ -119,7 +119,7 @@ Users can choose from multiple avatars to personalize their quiz experience. Ava
 ---
 
 ## 🎥 Demo Video  
-[![Watch the demo video](https://github.com/kurisettisaisujith/quz/blob/main/image.png)](https://drive.google.com/file/d/1XCiP1-ERvmrltSCouAuzB4Ejr8ZGomcS/view?usp=sharing))
+[![Watch the demo video](https://github.com/kurisettisaisujith/quz/blob/main/image.png)](https://drive.google.com/file/d/1XCiP1-ERvmrltSCouAuzB4Ejr8ZGomcS/view?usp=sharing)
 
 ---
 
